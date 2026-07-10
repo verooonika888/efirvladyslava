@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Прямий ефір | Робота зі страхом самотності</title>
     
-    <!-- Підключення шрифтів (Montserrat для тексту, Playfair Display для заголовків) -->
+    <!-- Підключення шрифтів -->
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
     
     <!-- Підключення Tailwind CSS -->
@@ -30,25 +30,21 @@
         }
     </script>
     <style>
-        /* Базові налаштування */
         body { color: #e2e8f0; background-color: #0b0f19; }
         html { scroll-behavior: smooth; }
         
-        /* Езотеричне м'яке світіння */
         .text-glow-gold { text-shadow: 0 0 20px rgba(212, 175, 55, 0.6); }
         .gradient-text-gold { background: linear-gradient(90deg, #d4af37, #fde047, #d4af37); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-size: 200% auto; animation: shine 4s linear infinite; }
         .mystic-shadow { box-shadow: 0 0 40px rgba(107, 33, 168, 0.3); }
         
         @keyframes shine { to { background-position: 200% center; } }
 
-        /* Скляні картки */
         .glass-card { 
             background: rgba(17, 24, 39, 0.7); 
             backdrop-filter: blur(20px); 
             border: 1px solid rgba(212, 175, 55, 0.15); 
         }
 
-        /* Кнопка */
         .btn-mystic {
             background: linear-gradient(90deg, #2e1065 0%, #6b21a8 50%, #2e1065 100%);
             background-size: 200% auto;
@@ -57,16 +53,13 @@
         }
         .btn-mystic:hover { background-position: right center; box-shadow: 0 0 25px rgba(212, 175, 55, 0.4); border-color: rgba(212, 175, 55, 0.8); }
         
-        /* Скролбар */
         .hide-scroll::-webkit-scrollbar { display: none; }
         .hide-scroll { -ms-overflow-style: none; scrollbar-width: none; }
 
-        /* Валідація */
         .input-error { border-color: #ef4444 !important; background-color: rgba(239, 68, 68, 0.05) !important; }
         .error-message { display: none; color: #ef4444; font-size: 0.7rem; margin-top: 4px; text-transform: uppercase; letter-spacing: 0.05em; }
         .input-error + .error-message { display: block; }
 
-        /* Фоновий ефект туману/світла */
         .bg-orb {
             position: fixed;
             border-radius: 50%;
@@ -78,22 +71,14 @@
 </head>
 <body class="font-sans antialiased selection:bg-purpleGlow selection:text-white pb-0 relative min-h-screen flex flex-col justify-between overflow-x-hidden"> 
 
-    <!-- ================= БАГАТОШАРОВИЙ ФОН ================= -->
-    <!-- 1. Базовий темний колір -->
+    <!-- ФОН З ВАШИМ ФОТО -->
     <div class="fixed inset-0 z-[-4] bg-mysticBg"></div>
-    
-    <!-- 2. ФОТО ВЛАДИ (Тут підключається vlada.jpg) -->
     <div class="fixed inset-0 z-[-3] w-full h-full bg-[url('vlada.jpg')] bg-cover bg-top md:bg-center opacity-40 md:opacity-50"></div>
-    
-    <!-- 3. Містичні кольорові плями (лягають поверх фото як магічне освітлення) -->
     <div class="bg-orb w-[600px] h-[600px] bg-purple-900/60 top-[-100px] left-[-200px] mix-blend-color-dodge"></div>
     <div class="bg-orb w-[500px] h-[500px] bg-blue-900/40 bottom-[-100px] right-[-100px] mix-blend-color-dodge"></div>
-    
-    <!-- 4. Градієнтне затемнення знизу, щоб картки і текст читалися ідеально -->
     <div class="fixed inset-0 z-[-1] bg-gradient-to-b from-mysticBg/10 via-mysticBg/80 to-mysticBg pointer-events-none"></div>
-    <!-- ===================================================== -->
 
-    <!-- МОБІЛЬНА КНОПКА (Фіксована знизу) -->
+    <!-- МОБІЛЬНА КНОПКА -->
     <div class="fixed bottom-0 left-0 w-full z-50 p-3 bg-mysticBg/90 backdrop-blur-md border-t border-goldAccent/20 md:hidden">
         <button class="open-modal-btn block w-full btn-mystic text-white font-medium text-sm py-4 text-center rounded-xl uppercase tracking-widest transition transform active:scale-95 shadow-lg">
             ЗАРЕЄСТРУВАТИСЬ
@@ -102,33 +87,27 @@
 
     <!-- ГОЛОВНИЙ ЕКРАН -->
     <main class="flex-grow flex flex-col items-center pt-10 pb-[84px] md:pb-16 px-4 relative z-10">
-        
         <div class="w-full max-w-4xl mx-auto text-center flex flex-col items-center justify-center min-h-[calc(100vh-120px)] md:min-h-0 md:mt-10">
-            
             <div class="flex flex-col items-center">
-                <!-- ТЕГ -->
                 <div class="inline-block border border-goldAccent/30 px-6 py-2 rounded-full text-[11px] md:text-sm font-medium tracking-widest uppercase mb-6 text-goldAccent bg-goldAccent/10 backdrop-blur-md shadow-[0_0_20px_rgba(212,175,55,0.15)]">
                     ✨ Безкоштовний прямий ефір
                 </div>
 
-                <!-- ГОЛОВНИЙ ОФЕР -->
                 <h1 class="font-serif text-[32px] md:text-5xl lg:text-6xl font-bold leading-tight mb-6 drop-shadow-[0_4px_10px_rgba(0,0,0,0.8)] text-white">
                     Як відпустити <span class="gradient-text-gold drop-shadow-md">страх самотності</span> і перетворити його на свою внутрішню опору
                 </h1>
                 
-                <!-- ПІДОФЕР -->
                 <p class="text-base md:text-xl text-gray-200 mb-10 font-light max-w-3xl mx-auto leading-relaxed drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">
                     Дізнайтесь, як безпечно піти у свій страх, якщо зараз вас розриває зсередини: <span class="text-white font-medium">одна частина душі прагне змін та приймає його, а інша — панічно боїться.</span>
                 </p>
 
-                <!-- КНОПКА НА ДЕСКТОПІ -->
                 <button class="open-modal-btn hidden md:block w-full max-w-md btn-mystic text-white font-semibold py-5 rounded-2xl uppercase tracking-widest transition transform hover:-translate-y-1 mystic-shadow text-sm">
                     ЗАРЕЄСТРУВАТИСЬ
                 </button>
             </div>
         </div>
 
-        <!-- 3 БЛОКИ: ЩО БУДЕ НА ЕФІРІ -->
+        <!-- 3 БЛОКИ -->
         <div class="w-full max-w-5xl mt-12 md:mt-24 mb-8">
             <h2 class="font-serif text-3xl md:text-4xl font-bold text-center text-white mb-10 drop-shadow-md">
                 На прямому ефірі ми розберемо:
@@ -154,10 +133,8 @@
                 </div>
             </div>
         </div>
-
     </main>
 
-    <!-- ФУТЕР -->
     <footer class="py-8 text-center border-t border-white/5 text-gray-500 text-xs tracking-widest uppercase bg-mysticBg/80 backdrop-blur-md relative z-10 mt-auto">
         <p>© 2026 | ПРЯМИЙ ЕФІР</p>
     </footer>
@@ -193,14 +170,12 @@
                     <button type="submit" class="w-full btn-mystic text-white font-semibold py-4 rounded-xl uppercase tracking-widest transition transform active:scale-95 text-sm">
                         Отримати посилання
                     </button>
-                    <p class="text-center text-[10px] text-gray-500 mt-4 font-light">Натискаючи кнопку, ви погоджуєтесь на обробку даних.</p>
                 </div>
             </form>
         </div>
     </div>
 
     <script>
-        // --- POP-UP ЛОГІКА ---
         const orderModal = document.getElementById('order-modal');
         const openModalBtns = document.querySelectorAll('.open-modal-btn');
         const closeModalBtn = document.getElementById('close-modal');
@@ -235,7 +210,6 @@
             };
         }
 
-        // --- ВАЛІДАЦІЯ ТА ВІДПРАВКА ---
         popupForm.addEventListener('submit', function(e) {
             e.preventDefault();
             let isValid = true;
@@ -255,13 +229,9 @@
                 input.classList.add('focus:border-goldAccent');
             };
 
-            // Перевірка імені
             if (nameInput.value.trim().length < 2) showError(nameInput); else clearError(nameInput);
-            
-            // Перевірка телеграму
             if (tgInput.value.trim().length < 2) showError(tgInput); else clearError(tgInput);
             
-            // Перевірка телефону
             const phoneRegex = /^\+?[0-9\s\-()]{9,15}$/;
             const phoneVal = phoneInput.value.trim().replace(/\s+/g, ''); 
             if (!phoneRegex.test(phoneVal)) showError(phoneInput); else clearError(phoneInput);
@@ -271,15 +241,16 @@
                 submitBtn.disabled = true;
 
                 // ==========================================
-                // НАЛАШТУВАННЯ ПОСИЛАНЬ
+                // ПОСИЛАННЯ ВЖЕ ВСТАВЛЕНІ
                 // ==========================================
-                const googleScriptURL = 'ВСТАВТЕ_СЮДИ_ПОСИЛАННЯ_НА_GOOGLE_SCRIPT'; 
-                const telegramChannelURL = 'https://t.me/ВАШ_КАНАЛ'; 
+                const googleScriptURL = 'https://script.google.com/macros/s/AKfycbwwvrn6nNWql1vaAF6qx6kUNl5GcCGMU5z8vBaqtWgQ3ZQCXL7p6b_AP0GqC4Po_E2X8g/exec'; 
+                const telegramChannelURL = 'https://t.me/+D_TjAmDEPLIyNmMy'; 
 
                 const formData = new FormData();
                 formData.append('name', nameInput.value.trim());
                 formData.append('phone', phoneInput.value.trim());
                 formData.append('telegram', tgInput.value.trim()); 
+                formData.append('product', 'Безкоштовний Ефір'); 
                 formData.append('sheetName', 'Реєстрації_Ефір'); 
                 
                 const utms = getUTMs();
@@ -287,18 +258,12 @@
                 formData.append('utm_medium', utms.utm_medium);
                 formData.append('utm_campaign', utms.utm_campaign);
 
-                // Відправка даних у Google Таблицю
                 fetch(googleScriptURL, { method: 'POST', body: formData, mode: 'no-cors' })
-                .then(() => { 
-                    window.location.href = telegramChannelURL; 
-                })
-                .catch(() => { 
-                    window.location.href = telegramChannelURL; 
-                });
+                .then(() => { window.location.href = telegramChannelURL; })
+                .catch(() => { window.location.href = telegramChannelURL; });
             }
         });
 
-        // Очищення помилок під час вводу
         [document.getElementById('pop-name'), document.getElementById('pop-phone'), document.getElementById('pop-telegram')].forEach(input => {
             input.addEventListener('input', () => {
                 input.classList.remove('input-error');
